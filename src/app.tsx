@@ -24,7 +24,7 @@ const DriverApp = () => {
   }, [currentRide]);
 
   const handleTouchStart = (e: TouchEvent) => {
-    if (e.touches.length >= 3) {
+    if (e.touches.length >= 2) {
       setIsThreeFingerMenuOpen(true);
       e.preventDefault();
     }
