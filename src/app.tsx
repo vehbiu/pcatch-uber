@@ -19,6 +19,22 @@ const DriverApp = () => {
     return savedRideSettings ? JSON.parse(savedRideSettings) : DEFAULT_RIDE_SETTINGS;
   });
 
+
+  useEffect(() => {
+    window.addEventListener("scroll", preventMotion, false);
+    window.addEventListener("touchmove", preventMotion, false);
+
+    function preventMotion(event: Event) {
+      window.scrollTo(0, 0);
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    return () => {
+      window.removeEventListener("scroll", preventMotion);
+      window.removeEventListener("touchmove", preventMotion);
+    }
+  }, []);
+
   useEffect(() => {
     localStorage.setItem('rideSettings', JSON.stringify(currentRide));
   }, [currentRide]);
@@ -45,7 +61,7 @@ const DriverApp = () => {
 
   useEffect(() => {
     if (isThreeFingerMenuOpen) {
-      setTempRideSettings({...currentRide});
+      setTempRideSettings({ ...currentRide });
     }
   }, [isThreeFingerMenuOpen, currentRide]);
 
@@ -112,7 +128,7 @@ const DriverApp = () => {
         {/* Navigation button */}
         <div className="absolute right-4 bottom-8">
           <a
-          href={`https://www.google.com/maps/dir/?api=1&destination=${currentRide.passenger.dropOffLocation},Shoreview,MN&travelmode=driving`}
+            href={`https://www.google.com/maps/dir/?api=1&destination=${currentRide.passenger.dropOffLocation},Shoreview,MN&travelmode=driving`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center px-5 py-3 text-white transition-colors bg-black rounded-full shadow-lg hover:bg-gray-800"
