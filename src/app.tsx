@@ -89,10 +89,10 @@ const DriverApp = () => {
       </div>
 
       {/* Map View with Google Maps iframe */}
-      <div className="relative flex-1">
+      <div className="relative w-full" style={{ height: "calc(100vh - 81px)" }}>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11347.932237509326!2d-93.13940322066051!3d45.086891926250344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b32c9cdbc925e3%3A0x7ab9b4dca85b1e76!2sShoreview%2C%20MN!5e0!3m2!1sen!2sus!4v1710778712075!5m2!1sen!2sus"
-          className="w-full h-full border-none"
+          className="flex-1 w-full h-full border-none"
           title="Google Maps"
           allowFullScreen
           loading="lazy"
