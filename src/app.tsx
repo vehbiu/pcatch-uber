@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { MapPin, Navigation, ChevronLeft, Plus, Minus } from 'lucide-react';
+import { Analytics } from "@vercel/analytics/react"
 import "./app.css";
 
 const DEFAULT_RIDE_SETTINGS = {
@@ -82,6 +83,7 @@ const DriverApp = () => {
 
   return (
     <div className="flex flex-col w-full overflow-hidden bg-white min-h-dvh">
+      <Analytics />
       {/* Navigation Card */}
       <div className={"absolute top-0 w-full mx-auto z-10 flex items-center justify-between p-4"}>
         <div className="w-full p-4 text-white bg-black rounded-md">
