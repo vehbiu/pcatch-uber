@@ -65,7 +65,7 @@ const DriverApp = () => {
   };
 
   return (
-    <div className="flex flex-col w-full h-screen overflow-hidden bg-white">
+    <div className="flex flex-col w-full overflow-hidden bg-white min-h-dvh">
       {/* Navigation Card */}
       <div className={"absolute top-0 w-full mx-auto z-10 flex items-center justify-between p-4"}>
         <div className="w-full p-4 text-white bg-black rounded-md">
